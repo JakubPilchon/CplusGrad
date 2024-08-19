@@ -1,10 +1,13 @@
 #include <iostream>
+#include "grad.h"
 
 using namespace std;
 
 int main() {
-    char x;
-    cout << "Hello World!" << endl;
-    cin >> x;
-    return 0;
+    Node a(1.5), b(0.5);
+    Node c = operations::add_nodes(a, b);
+    cout << c.value << " value" << endl;
+    cout << a.dif << " a dif";
+    //cin >> "click to end"
+    cin.get();
 }
