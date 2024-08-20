@@ -3,14 +3,22 @@
 using namespace std;
 
 class Node {
-    public:
+  public:
     float value, dif;
+    
+  void  (*backward)(Node *self, Node *other);
+
+    // methods:
+  public:
     Node(float);
+    void print();
+    Node operator+(Node &);
+    Node operator-(Node &);
+    Node operator*(Node &);
+    Node operator/(Node &);
+    friend void operations::backward_test(Node*, Node*);
 };
 
 namespace operations {
-    Node add_nodes(Node &, Node &);
-    Node dec_nodes(Node &, Node &);
-    Node mul_nodes(Node &, Node &);
-    Node div_nodes(Node &, Node &);
-}
+    void backward_test(Node *self, Node *other);
+};

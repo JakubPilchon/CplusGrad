@@ -4,28 +4,38 @@
 using namespace std;
 
 Node::Node(float input) {
-    value = input;
-    dif = 10;
-    
+  value = input;
+  dif = 1;
 }
 
-Node operations::add_nodes(Node &a, Node &b) {
-    a.dif = 1; b.dif = 1;
-    Node c(a.value + b.value);
-    return c;
+void Node::print() {
+  cout << "<value = " << value << " dif = " << dif << ">" << endl;
 }
-Node operations::dec_nodes(Node &a, Node &b) {
-    a.dif = 1; b.dif = 1;
-    Node c(a.value - b.value);
-    return c;
+
+Node Node::operator+(Node &a) {
+  a.dif = 1; dif = 1;
+  Node c(a.value + value);
+  return c;
 }
-Node operations::mul_nodes(Node &a, Node &b) {
-    a.dif = b.value; b.dif = a.value;
-    Node c(a.value - b.value);
-    return c;
+
+Node Node::operator-(Node &a) {
+  a.dif = 1; dif = 1;
+  Node c(a.value - value);
+  return c;
 }
-Node operations::dec_nodes(Node &a, Node &b) {
-    a.dif = 1; b.dif = 1;
-    Node c(a.value - b.value);
-    return c;
+
+Node Node::operator*(Node &a) {
+  a.dif = value; dif = a.value;
+  Node c(a.value - value);
+  return c;
 }
+
+Node Node::operator/(Node &a) {
+  a.dif = -1; dif = 1;
+  Node c(a.value - value);
+  return c;
+}
+void operations::backward_test(Node *self, Node *other) {
+        self->dif = other->value; 
+        other->dif = self->value; 
+    }
