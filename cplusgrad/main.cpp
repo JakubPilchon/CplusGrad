@@ -36,8 +36,9 @@ int main() {
     Node a(1.5), b(0.5), c(3.0);
     Node d = a + b; // d = 2
     Node e = d * c; // e = 6
+    Node f = e.square();
     e.print();
-    iterate(e);
+    iterate(f);
 
     //cout << a.dif << " a dif" << endl << b.dif << " b dif";
 }

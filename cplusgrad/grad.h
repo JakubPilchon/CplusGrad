@@ -11,16 +11,17 @@ class Node {
     // methods:
     Node(float);
     void print();
+    // Operations:
     Node operator+(Node &);
     Node operator-(Node &);
     Node operator*(Node &);
     Node operator/(Node &);
-    //friend void operations::backward_test(Node*, Node*);
+    Node square();
 
     //private:
     Node* parents[2] = {nullptr, nullptr};
     private:
-    void set_parents(Node*, Node*);
+    Node(float, Node*[2]); // second constructor
     
 };
 
