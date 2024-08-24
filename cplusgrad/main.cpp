@@ -38,7 +38,11 @@ int main() {
     Node e = d * c; // e = 6
     Node f = e.square();
     e.print();
-    iterate(f);
+    //iterate(f);
+    d.iterate_through();
+    //f.back_sqr();
+    e.print();
+    //a.print();
 
     //cout << a.dif << " a dif" << endl << b.dif << " b dif";
 }
