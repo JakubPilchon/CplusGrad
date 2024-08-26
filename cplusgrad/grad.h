@@ -19,12 +19,18 @@ class Node {
     Node operator-(Node &);
     Node operator*(Node &);
     Node operator/(Node &);
+    Node operator+(float);
+    Node operator-(float);
+    Node operator*(float);
+    Node operator/(float);
     Node square();
 
     //backward_operations
     void back_default ();
     void back_add ();
+    void back_sub ();
     void back_mul ();
+    void back_div();
     void back_sqr ();
 
     void (Node::*backwardPtr)() = Node::back_default; // function pointer for backward operation

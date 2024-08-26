@@ -33,16 +33,15 @@ void iterate(Node &a) {
 
 
 int main() {
-    Node a(1.5), b(0.5), c(3.0);
-    Node d = a + b; // d = 2
-    Node e = d * c; // e = 6
-    Node f = e.square();
-    e.print();
-    //iterate(f);
-    d.iterate_through();
-    //f.back_sqr();
-    e.print();
-    //a.print();
-
-    //cout << a.dif << " a dif" << endl << b.dif << " b dif";
+    //Node a(1.5), b(0.5), c(3.0);
+    //Node d = a + b; // d = 2
+    //Node e = d * c; // e = 6
+    //Node f = e.square();
+    //f.iterate_through();
+    Node x(4);
+    Node a(3);
+    Node b = x/a;
+    b.iterate_through();
+    a.print();
+    return 0;
 }
