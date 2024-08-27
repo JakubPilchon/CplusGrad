@@ -41,7 +41,3 @@ class Node {
     Node(float, Node*[2]); // second constructor, to be used to create a graph
     
 };
-
-namespace operations {
-    void backward_test(Node *self, Node *other);
-};

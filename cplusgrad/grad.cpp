@@ -9,6 +9,7 @@ Node::Node(float input) {
 }
 
 Node::Node(float input, Node* list[2]) {
+  // internal constructor
   value = input;
   parents[0] = list[0];
   parents[1] = list[1];
@@ -101,6 +102,8 @@ void Node::back_sqr () {
 }
 
 void Node::iterate_through () {
+  // traverses through Graph, by bfs, everytime it encounters a Node 
+  // it activates its backpropagation method using pointer-to-method 
   queue<Node*> q; // main queue
   q.push(this);
 
@@ -119,8 +122,3 @@ void Node::iterate_through () {
     }
   }
 }
-
-void operations::backward_test(Node *self, Node *other) {
-        self->dif = other->value; 
-        other->dif = self->value; 
-    }
