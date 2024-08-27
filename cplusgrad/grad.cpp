@@ -25,8 +25,8 @@ Node Node::operator+(Node &a) {
   return c;
 }
 Node Node::operator+(float a) {
-  Node new_node = Node(a);
-  Node c = Node::operator+(new_node);
+  Node* new_node = new Node(a);
+  Node c = Node::operator+(*new_node);
   return c;
 }
 
@@ -37,8 +37,8 @@ Node Node::operator-(Node &a) {
   return c;
 }
 Node Node::operator-(float a) {
-  Node new_node = Node(a);
-  Node c = Node::operator-(new_node);
+  Node* new_node = new Node(a);
+  Node c = Node::operator-(*new_node);
   return c;
 }
 
@@ -49,8 +49,8 @@ Node Node::operator*(Node &a) {
   return c;
 }
 Node Node::operator*(float a) {
-  Node new_node = Node(a);
-  Node c = Node::operator*(new_node);
+  Node* new_node = new Node(a);
+  Node c = Node::operator*(*new_node);
   return c;
 }
 
@@ -61,8 +61,8 @@ Node Node::operator/(Node &a) {
   return c;
 }
 Node Node::operator/(float a) {
-  Node new_node = Node(a);
-  Node c = Node::operator/(new_node);
+  Node* new_node = new Node(a);
+  Node c = Node::operator/(*new_node);
   return c;
 }
 

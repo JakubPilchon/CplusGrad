@@ -40,7 +40,8 @@ int main() {
     //f.iterate_through();
     Node x(4);
     Node a(3);
-    Node b = x/a;
+    Node c = a * x;
+    Node b = c.square();
     b.iterate_through();
     a.print();
     return 0;
