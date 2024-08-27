@@ -33,7 +33,7 @@ class Node {
     void back_div();
     void back_sqr ();
 
-    void (Node::*backwardPtr)() = Node::back_default; // function pointer for backward operation
+    void (Node::*backwardPtr)() = &Node::back_default; // function pointer for backward operation
 
     //private:
     Node* parents[2] = {nullptr, nullptr};

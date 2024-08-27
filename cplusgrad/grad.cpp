@@ -21,7 +21,7 @@ void Node::print() {
 Node Node::operator+(Node &a) {
   Node* arr[2] = {this, &a};
   Node c(a.value + value, arr);
-  c.backwardPtr = Node::back_add;
+  c.backwardPtr = &Node::back_add;
   return c;
 }
 Node Node::operator+(float a) {
@@ -33,7 +33,7 @@ Node Node::operator+(float a) {
 Node Node::operator-(Node &a) {
   Node* arr[2] = {this, &a};
   Node c(value - a.value, arr);
-  c.backwardPtr = Node::back_sub;
+  c.backwardPtr = &Node::back_sub;
   return c;
 }
 Node Node::operator-(float a) {
@@ -45,7 +45,7 @@ Node Node::operator-(float a) {
 Node Node::operator*(Node &a) {
   Node* arr[2] = {this, &a};
   Node c(a.value * value, arr);
-  c.backwardPtr = Node::back_mul;
+  c.backwardPtr = &Node::back_mul;
   return c;
 }
 Node Node::operator*(float a) {
@@ -57,7 +57,7 @@ Node Node::operator*(float a) {
 Node Node::operator/(Node &a) {
   Node* arr[2] = {this, &a};
   Node c(a.value / value, arr);
-  c.backwardPtr = Node::back_div;
+  c.backwardPtr = &Node::back_div;
   return c;
 }
 Node Node::operator/(float a) {
@@ -70,7 +70,7 @@ Node Node::operator/(float a) {
 Node Node::square() {
   Node* arr[2] = {this, nullptr};
   Node c(value * value, arr);
-  c.backwardPtr = Node::back_sqr;
+  c.backwardPtr = &Node::back_sqr;
   return c;
 }
 
